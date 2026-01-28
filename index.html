@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bowden Tech Solutions | Network & Security Engineer</title>
+    <meta name="description" content="Professional IT portfolio of a Network & Security Engineer specializing in enterprise infrastructure, cybersecurity, and cloud solutions. Orlando-based MSP services available.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #0f172a;
+            --accent: #06b6d4;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        /* Header/Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, var(--secondary) 0%, #1e3a8a 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Section Styles */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.125rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .highlights {
+            background: var(--bg-alt);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .highlights h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .highlights ul {
+            list-style: none;
+        }
+
+        .highlights li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+        }
+
+        .highlights li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-alt);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+        }
+
+        /* Certifications Section */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .cert-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.15);
+        }
+
+        .cert-badge {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .cert-card h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #10b981;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        .cert-status.in-progress {
+            background: #f59e0b;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-header {
+            background: var(--secondary);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .project-header h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+        }
+
+        .project-body {
+            padding: 1.5rem;
+        }
+
+        .project-body p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .project-body ul {
+            margin-left: 1.5rem;
+            color: var(--text-light);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-alt);
+            padding: 2rem;
+            border-radius: 12px;
+            border-top: 4px solid var(--primary);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--bg-alt);
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.25rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Bowden Tech Solutions</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Network & Security Engineer</h1>
+            <p class="subtitle">Securing Infrastructure | Automating Solutions | Driving Results</p>
+            <p>Experienced IT professional specializing in enterprise network security, cloud infrastructure, and automation. Currently advancing toward defense contractor and Fortune 500 opportunities while providing expert MSP services in Orlando.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#projects" class="btn btn-secondary">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-header">
+            <h2>About Me</h2>
+            <p>Building secure, scalable infrastructure for the modern enterprise</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Professional Background</h3>
+                <p>I'm a network and security engineer with hands-on experience in enterprise infrastructure, cybersecurity, and cloud solutions. My expertise spans network architecture, security implementation, and automation, with a focus on delivering measurable results for organizations.</p>
+                <p>Currently pursuing advanced certifications (CCNA, Security+) and a degree through WGU while actively working on cutting-edge projects that demonstrate real-world problem-solving capabilities.</p>
+                <p>My goal is to transition into high-impact roles with defense contractors or Fortune 500 companies, leveraging my technical skills and security clearance eligibility to protect critical infrastructure.</p>
+            </div>
+            <div class="highlights">
+                <h4>Career Highlights</h4>
+                <ul>
+                    <li>Enterprise network security implementation</li>
+                    <li>Active Directory & Azure cloud management</li>
+                    <li>Security automation & compliance</li>
+                    <li>Firewall configuration & management</li>
+                    <li>Leadership & team coordination</li>
+                    <li>MSP service delivery</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header">
+            <h2>Technical Skills</h2>
+            <p>Comprehensive expertise across networking, security, and cloud technologies</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>🔒 Network Security</h3>
+                <ul>
+                    <li>Firewall Configuration & Management</li>
+                    <li>IDS/IPS Implementation</li>
+                    <li>VPN Solutions</li>
+                    <li>Network Segmentation</li>
+                    <li>Security Monitoring</li>
+                    <li>Threat Analysis</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>🌐 Networking</h3>
+                <ul>
+                    <li>Routing & Switching (Cisco)</li>
+                    <li>TCP/IP & Network Protocols</li>
+                    <li>Network Design & Architecture</li>
+                    <li>VLAN Configuration</li>
+                    <li>Load Balancing</li>
+                    <li>Network Troubleshooting</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>☁️ Cloud & Infrastructure</h3>
+                <ul>
+                    <li>Microsoft Azure</li>
+                    <li>Active Directory</li>
+                    <li>Azure AD / Entra ID</li>
+                    <li>Virtualization (VMware, Hyper-V)</li>
+                    <li>Infrastructure as Code</li>
+                    <li>Cloud Security</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>⚙️ Automation & Tools</h3>
+                <ul>
+                    <li>PowerShell Scripting</li>
+                    <li>Python Automation</li>
+                    <li>Configuration Management</li>
+                    <li>Security Orchestration</li>
+                    <li>Monitoring & Alerting</li>
+                    <li>Documentation & Reporting</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <div class="section-header">
+            <h2>Certifications & Education</h2>
+            <p>Continuously advancing technical knowledge and credentials</p>
+        </div>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-badge">🌐</div>
+                <h3>CCNA</h3>
+                <p>Cisco Certified Network Associate</p>
+                <span class="cert-status in-progress">In Progress</span>
+            </div>
+            <div class="cert-card">
+                <div class="cert-badge">🔐</div>
+                <h3>Security+</h3>
+                <p>CompTIA Security+</p>
+                <span class="cert-status in-progress">In Progress</span>
+            </div>
+            <div class="cert-card">
+                <div class="cert-badge">🎓</div>
+                <h3>WGU Degree</h3>
+                <p>IT/Cybersecurity Track</p>
+                <span class="cert-status in-progress">Pursuing</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+            <p>Real-world solutions demonstrating technical expertise</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Enterprise Network Security Implementation</h3>
+                    <div class="project-tags">
+                        <span class="tag">Firewalls</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Compliance</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p>Designed and implemented comprehensive network security architecture for enterprise environment.</p>
+                    <ul>
+                        <li>Configured next-gen firewalls with advanced threat protection</li>
+                        <li>Implemented network segmentation and access controls</li>
+                        <li>Reduced security incidents by implementing monitoring</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Azure Cloud Migration & Management</h3>
+                    <div class="project-tags">
+                        <span class="tag">Azure</span>
+                        <span class="tag">Cloud</span>
+                        <span class="tag">Active Directory</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p>Led cloud infrastructure migration and ongoing management in Azure environment.</p>
+                    <ul>
+                        <li>Migrated on-premises resources to Azure</li>
+                        <li>Configured Azure AD and hybrid identity solutions</li>
+                        <li>Implemented security policies and compliance controls</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Security Automation Framework</h3>
+                    <div class="project-tags">
+                        <span class="tag">PowerShell</span>
+                        <span class="tag">Automation</span>
+                        <span class="tag">Security</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p>Developed automated security monitoring and response system using PowerShell and scripting.</p>
+                    <ul>
+                        <li>Created automated security scanning tools</li>
+                        <li>Built reporting dashboards for security metrics</li>
+                        <li>Reduced manual security tasks by 60%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="section-header">
+            <h2>Professional Services</h2>
+            <p>Expert IT solutions for businesses in Orlando and beyond</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔐</div>
+                <h3>Network Security</h3>
+                <p>Comprehensive security solutions including firewall management, intrusion detection, security audits, and compliance implementation.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌐</div>
+                <h3>Network Infrastructure</h3>
+                <p>Design, implementation, and management of enterprise-grade network infrastructure with focus on reliability and performance.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">☁️</div>
+                <h3>Cloud Solutions</h3>
+                <p>Azure cloud migration, management, and optimization. Active Directory integration and hybrid infrastructure setup.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3>Managed IT Services</h3>
+                <p>Proactive monitoring, maintenance, and support for your IT infrastructure. Minimize downtime and maximize efficiency.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>Automation & Optimization</h3>
+                <p>Streamline operations with custom automation solutions. Reduce manual tasks and improve operational efficiency.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>IT Consulting</h3>
+                <p>Strategic IT planning and consulting to align technology with business goals. Architecture review and optimization.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <p>Let's discuss how I can help with your next project or opportunity</p>
+        </div>
+        <div class="contact-content">
+            <p style="color: var(--text-light); margin-bottom: 2rem;">
+                Whether you're a recruiter looking for top talent, a business needing IT solutions, or a potential collaborator, I'd love to hear from you.
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="/cdn-cgi/l/email-protection#85e6eaebf1e4e6f1c5e7eaf2e1e0ebf1e0e6edf6eae9f0f1eceaebf6abe6eae8"><span class="__cf_email__" data-cfemail="d1b2bebfa5b0b2a591b3bea6b5b4bfa5b4b2b9a2bebda4a5b8bebfa2ffb2bebc">[email&#160;protected]</span></a>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Orlando, Florida</span>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <a href="https://www.linkedin.com/in/antonio-bowden" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+            <div style="margin-top: 2rem;">
+                <a href="/cdn-cgi/l/email-protection#eb8884859f8a889fab89849c8f8e859f8e88839884879e9f82848598c5888486" class="btn btn-primary">Send Me a Message</a>
+            </div>
+        </div>
+    </section>
+
+    <footer
