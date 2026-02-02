@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BowdenNextGenNetworks | Orlando Next-Gen MSP</title>
+    <meta name="description" content="BowdenNextGenNetworks: Orlando's leading MSP providing AI-driven network security, 24/7 SOC monitoring, and managed IT services for Central Florida businesses.">
+    <title>BowdenNextGenNetworks | Orlando Next-Gen MSP & Cyber Security</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="glass-nav">
@@ -14,10 +15,10 @@
             <li><a href="#" onclick="showPage('home')">Intelligence Hub</a></li>
             <li><a href="#" onclick="showPage('services')">MSP Services</a></li>
             <li><a href="#" onclick="showPage('portfolio')">Case Studies</a></li>
-            <li><a href="#" onclick="showPage('contact')">Security Audit</a></li>
+            <li><a href="#" onclick="showPage('contact')" class="cta-nav">Free Security Audit</a></li>
         </ul>
         <div class="system-status">
-            <span class="dot"></span> SOC ACTIVE - ORLANDO, FL
+            <span class="dot"></span> <span class="status-text">SOC ACTIVE: ORLANDO HUB</span>
         </div>
     </nav>
 
@@ -26,15 +27,80 @@
 
     <div id="ai-chat-container" class="glass-card">
         <div class="chat-header">
-            <span>NGN Assistant</span>
-            <button onclick="toggleChat()">_</button>
+            <div class="header-info">
+                <span class="live-dot"></span>
+                <span>NGN Cyber Assistant</span>
+            </div>
+            <button onclick="toggleChat()" class="min-btn">_</button>
         </div>
-        <div id="chat-display"></div>
+        <div id="chat-display">
+            <div class="ai-bubble">Hello. I am the BowdenNGN Intelligence engine. How can I assist with your Orlando network security today?</div>
+        </div>
         <div class="chat-input-area">
-            <input type="text" id="user-msg" placeholder="Ask about network security...">
-            <button id="send-btn">Send</button>
+            <input type="text" id="user-msg" placeholder="Ask about ransomware protection...">
+            <button id="send-btn">Analyze</button>
         </div>
     </div>
+
+    <template id="home-content">
+        <section class="hero">
+            <h1 class="glitch-text">Securing the <span class="highlight">I-4 Corridor</span></h1>
+            <p class="hero-sub">Predictive Managed Services for Orlando's Healthcare, Legal, and Hospitality Sectors.</p>
+            <div class="hero-stats">
+                <div class="stat-item"><strong>99.99%</strong><span>Uptime Guaranteed</span></div>
+                <div class="stat-item"><strong>15 Min</strong><span>Emergency Response</span></div>
+                <div class="stat-item"><strong>24/7</strong><span>SOC Monitoring</span></div>
+            </div>
+        </section>
+    </template>
+
+    <template id="services-content">
+        <section class="detail-section">
+            <h2>Next-Gen Managed Services</h2>
+            <div class="service-grid">
+                <article class="glass-card service-detail">
+                    <div class="icon">🛡️</div>
+                    <h3>Managed Detection & Response (MDR)</h3>
+                    <p>We don't just alert; we neutralize. Our SOC uses AI-threat hunting to stop breaches at the endpoint before they spread.</p>
+                    <ul>
+                        <li>Ransomware Rollback</li>
+                        <li>24/7 Human-led Monitoring</li>
+                        <li>Incident Containment</li>
+                    </ul>
+                </article>
+                <article class="glass-card service-detail">
+                    <div class="icon">☁️</div>
+                    <h3>Cloud Architecture & Security</h3>
+                    <p>Secure Azure and AWS migrations tailored for Central Florida's regulatory landscape.</p>
+                    <ul>
+                        <li>Zero Trust Access</li>
+                        <li>Cloud Compliance (HIPAA/PCI)</li>
+                        <li>Automated Backups</li>
+                    </ul>
+                </article>
+                <article class="glass-card service-detail">
+                    <div class="icon">🏢</div>
+                    <h3>Co-Managed IT</h3>
+                    <p>Support for in-house IT teams. We handle the "heavy lifting" of security so you can focus on growth.</p>
+                </article>
+            </div>
+        </section>
+    </template>
+
+    <template id="portfolio-content">
+        <section class="detail-section">
+            <h2>Proven Results in Central Florida</h2>
+            <div class="case-study-container">
+                <div class="glass-card case-study">
+                    <span class="tag">Healthcare</span>
+                    <h3>Multi-Clinic Network Overhaul</h3>
+                    <p><strong>The Challenge:</strong> Constant downtime and HIPAA compliance risks across 5 Orlando locations.</p>
+                    <p><strong>The Solution:</strong> Implemented a secure SD-WAN and centralized identity management.</p>
+                    <div class="results"><strong>Result:</strong> 85% reduction in support tickets; 100% Audit Success.</div>
+                </div>
+            </div>
+        </section>
+    </template>
 
     <script src="app.js"></script>
 </body>
