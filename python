@@ -1,0 +1,16 @@
+import socket
+
+def quick_scan(target_ip):
+    """Simple port scanner to demonstrate network visibility."""
+    common_ports = [21, 22, 80, 443, 3389]
+    results = {}
+    
+    for port in common_ports:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(1)
+        status = s.connect_ex((target_ip, port))
+        results[port] = "Open" if status == 0 else "Closed"
+        s.close()
+    return results
+
+# Portfolio logic: Call this via a subprocess from Node.js if needed
