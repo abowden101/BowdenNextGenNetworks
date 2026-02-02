@@ -1,0 +1,46 @@
+:root {
+    --bg: #0a0b10;
+    --accent: #39ff14; /* Cyber Lime */
+    --text: #e0e0e0;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    border-bottom: 1px solid #222;
+}
+
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    background: linear-gradient(to right, #fff, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card {
+    border: 1px solid #333;
+    padding: 2rem;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 15px var(--accent);
+}
