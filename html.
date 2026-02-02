@@ -14,7 +14,26 @@
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-    </nav>
+    <nav>
+    <div class="logo">Bowden<span>NGN</span></div>
+    <ul id="main-nav">
+        <li><a href="#" data-page="home">Home</a></li>
+        <li><a href="#" data-page="services">Services</a></li>
+        <li><a href="#" data-page="portfolio">Portfolio</a></li>
+    </ul>
+</nav>
+
+<main id="content-area">
+    </main>
+
+<div id="chat-container">
+    <div id="chat-header">Security Assistant (Live)</div>
+    <div id="chat-box"></div>
+    <div class="chat-input-area">
+        <input type="text" id="user-input" placeholder="Ask about Orlando network audits...">
+        <button id="send-btn">Send</button>
+    </div>
+</div>
 
     <header class="hero">
         <h1>Securing Orlando’s Digital Frontier</h1>
