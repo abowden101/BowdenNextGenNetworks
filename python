@@ -14,3 +14,10 @@ def quick_scan(target_ip):
     return results
 
 # Portfolio logic: Call this via a subprocess from Node.js if needed
+import requests
+
+def get_orlando_threats():
+    # Example: Integrating a local security API or RSS feed
+    return "Increased Phishing activity detected in Orange County targeting law firms."
+
+# This data can be sent to your Node.js chat logic periodically
